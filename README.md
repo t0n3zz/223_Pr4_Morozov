@@ -22,9 +22,9 @@
 Задание 1
 * <img width="283" height="69" alt="image" src="https://github.com/t0n3zz/223_Pr4_Morozov/blob/master/Pr4/Static/Img1.png?raw=true" />
 Задание 2
-* <img width="260" height="73" alt="image" src="" />
+* <img width="260" height="73" alt="image" src="https://github.com/t0n3zz/223_Pr4_Morozov/blob/master/Pr4/Static/Img2.png?raw=true" />
 Задание 3
-* <img width="361" height="80" alt="image" src="" />
+* <img width="361" height="80" alt="image" src="https://github.com/t0n3zz/223_Pr4_Morozov/blob/master/Pr4/Static/Img3.png?raw=true" />
 
 
 ##  Стек технологий
