@@ -41,4 +41,4 @@
 *   **Система контроля версий:** Git (платформа GitHub.com)
 
 ##  Архитектура приложения
-<img width="430" height="395" alt="image" src="" />
+<img width="430" height="395" alt="image" src="https://github.com/t0n3zz/223_Pr4_Morozov/blob/master/Pr4/Static/arch.png?raw=true" />
