@@ -1,0 +1,56 @@
+﻿<Page x:Class="Pr4.Pages.ThirdPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Pr4.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ThirdPage">
+
+    <Grid Background="#FFEAEAEA">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Image 
+            Source="/Static/Img3.png" 
+            Height="90" 
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Grid.Row="0"
+            Width="800" Margin="34,-5,0,0"
+        />
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="xTbl" Width="50" Background="White" Text="x" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="10,10" TextAlignment="Center"/>
+            <TextBox x:Name="xTb" Height="25" Grid.Row="1" Grid.Column="1" Width="150" Margin="10,10" ToolTip="Введите значение x (действительное число)"/>
+
+            <TextBlock x:Name="ansTbl" Width="50" Background="White" Text="Ответ:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Top" Margin="10,10,10,0" TextAlignment="Center"/>
+            <TextBox x:Name="ansTb" Background="White" Grid.Row="4" Grid.Column="1" Width="150" Margin="25,10,25,-34" IsReadOnly="True" ToolTip="Здесь отображается результат вычислений"/>
+
+            <Button x:Name="Calculate" Background="White" Grid.Column="1" Content="Вычислить" Margin="194,10,-174,0" Grid.Row="1" VerticalAlignment="Top" Height="45" Click="Calculate_Click" ToolTip="Нажмите, чтоб вычислить функцию" Grid.RowSpan="4"/>
+            <Button x:Name="Clear" Background="White" Content="Очистить"  Margin="194,90,-174,-27" Grid.Row="4" Height="45" Click="Clear_Click" ToolTip="Нажмите, чтобы очистить все поля" Grid.Column="1"/>
+
+            <Canvas x:Name="GraphCanvas" Grid.Row="4" Background="White" Grid.Column="1" Margin="412,0,-486,-102" ToolTip="График"/>
+            <Button Content="← Назад" Click="Prev_Click" Grid.Column="1" Margin="213,168,-93,-135" Grid.Row="4"/>
+            <Button Content="Вперед →" Click="Next_Click" Margin="298,168,-178,-135" Grid.Column="1" Grid.Row="4"/>
+        </Grid>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+    </Grid>
+</Page>
