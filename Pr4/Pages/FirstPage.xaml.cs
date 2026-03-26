@@ -1,4 +1,4 @@
-﻿using System.Windows;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace Pr4.Pages
@@ -74,22 +74,7 @@ namespace Pr4.Pages
                 throw new ArgumentException("y must be greater than 0 for logarithm.");
             }
 
-            double numerator = Math.Exp(Math.Abs(x - y)) *
-                               Math.Pow(Math.Abs(x - y), x + y);
-
-            double denominator = Math.Atan(x) + Math.Atan(z);
-            if (denominator == 0)
-            {
-                throw new DivideByZeroException("Denominator cannot be zero.");
-            }
-
-            double firstPart = numerator / denominator;
-
-            double secondPart = Math.Pow(
-                x * x + Math.Pow(Math.Log(y), 2),
-                1.0 / 3.0);
-
-            double phi = firstPart + secondPart;
+            double phi = Calc.Formula1(x, y, z);
             return phi.ToString("F4");
         }
 
