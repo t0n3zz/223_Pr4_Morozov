@@ -41,5 +41,13 @@ namespace Pr4 {
                 throw new ArgumentException("The calculation resulted in an undefined value.");
             return result;
         }
+        public static double Formula3(double x) {
+            double term1 = 9 * Math.Pow(x, 4);
+            double angleInDegrees = 57.2 + x;
+            double angleInRadians = angleInDegrees * Math.PI / 180.0;
+            double term2 = Math.Sin(angleInRadians);
+
+            return term1 + term2;
+        }
     }
 }

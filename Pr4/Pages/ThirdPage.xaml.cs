@@ -1,4 +1,4 @@
-﻿using System.Windows;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Shapes;
 using System.Windows.Media;
@@ -28,7 +28,7 @@ namespace Pr4.Pages
 
                 foreach (double x in xValues)
                 {
-                    double y = CalculateY(x);
+                    double y = Calc.Formula3(x);
                     resultText += y.ToString("F4").Replace('.', ',') + "\n";
                 }
 
@@ -60,20 +60,10 @@ namespace Pr4.Pages
             return values;
         }
 
-        private double CalculateY(double x)
-        {
-            double term1 = 9 * Math.Pow(x, 4);
-            double angleInDegrees = 57.2 + x;
-            double angleInRadians = angleInDegrees * Math.PI / 180.0;
-            double term2 = Math.Sin(angleInRadians);
-
-            return term1 + term2;
-        }
-
         private void BuildGraph(List<double> xValues)
         {
             GraphCanvas.Children.Clear();
-            List<double> yValues = xValues.Select(x => CalculateY(x)).ToList();
+            List<double> yValues = xValues.Select(x => Calc.Formula3(x)).ToList();
 
             double width = GraphCanvas.ActualWidth;
             double height = GraphCanvas.ActualHeight;
