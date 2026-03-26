@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -83,24 +83,7 @@ namespace Pr4.Pages
                 _ => throw new ArgumentException("Unknown function type.")
             };
 
-            double result;
-            double epsilon = 1e-6;
-
-            if (Math.Abs(x - m) < epsilon)
-            {
-                result = Math.Pow(fx + m, 2);
-            }
-            else if (-1 < m && m < x)
-            {
-                result = Math.Sin(5 * fx + 3 * m * Math.Abs(fx));
-            }
-            else
-            {
-                result = Math.Cos(3 * fx + 5 * m * Math.Abs(fx));
-            }
-
-            if (double.IsInfinity(result) || double.IsNaN(result))
-                throw new ArgumentException("The calculation resulted in an undefined value.");
+            double result = Calc.Formula2(x, m, fx);
 
             return result.ToString("F4", CultureInfo.InvariantCulture);
         }

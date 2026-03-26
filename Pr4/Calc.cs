@@ -1,3 +1,4 @@
+using SharpDX.Direct3D9;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,22 @@ namespace Pr4 {
 
             double phi = firstPart + secondPart;
             return phi;
+        }
+        public static double Formula2(double x, double m, double w) {
+            double result;
+            double epsilon = 1e-6;
+
+            if (Math.Abs(x - m) < epsilon) {
+                result = Math.Pow(w + m, 2);
+            } else if (-1 < m && m < x) {
+                result = Math.Sin(5 * w + 3 * m * Math.Abs(w));
+            } else {
+                result = Math.Cos(3 * w + 5 * m * Math.Abs(w));
+            }
+
+            if (double.IsInfinity(result) || double.IsNaN(result))
+                throw new ArgumentException("The calculation resulted in an undefined value.");
+            return result;
         }
     }
 }
